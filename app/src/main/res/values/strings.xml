@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Blood Bank</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login_page_image">Login page image</string>
+    <string name="password">Password</string>
+    <string name="input_password">Input Password</string>
+    <string name="input_phone_number">Input Phone Number</string>
+
+
+        <string name="gender_prompt">Choose your gender</string>
+
+        <string-array name="gender_arrays">
+            <item>Select Gender</item>
+            <item>Male</item>
+            <item>Female</item>
+            <item>Other</item>
+        </string-array>
+
+
+    <string name="bloodgrp_prompt">Select your bloodgroup</string>
+
+    <string-array name="bloodgrp_arrays">
+        <item>Select Blood Group</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+    </string-array>
+
+</resources>
