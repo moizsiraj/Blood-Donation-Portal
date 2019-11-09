@@ -11,24 +11,28 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button signup;
+    private Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
 
-        signup = (Button) findViewById(R.id.buttonSignUp);
-        signup.setOnClickListener(new View.OnClickListener() {
+        login = (Button) findViewById(R.id.signout);
+        login.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
 
                 Context context = MainActivity.this;
-                Class destinationActivity = SignUp.class;
-                Intent startSignUpIntent = new Intent(context, destinationActivity);
-                startActivity(startSignUpIntent);
+                Class destinationActivity = userPage.class;
+                Intent startReqDonIntent = new Intent(context, destinationActivity);
+                startActivity(startReqDonIntent);
             }
         });
-    }}
+    }
+}
