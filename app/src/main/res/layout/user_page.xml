@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <Button
+            android:id="@+id/buttonDetails"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorAccent"
+            android:text="Add Details"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHistory"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/signout"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/colorAccent"
+            android:text="Sign Out"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDetails"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/buttonDonate"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorAccent"
+            android:text="Donate"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notifBox" />
+
+        <Button
+            android:id="@+id/buttonRequestPage"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:text="Request"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDonate" />
+
+        <Button
+            android:id="@+id/buttonRequestStatus"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:text="Request Status"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRequestPage" />
+
+        <Button
+            android:id="@+id/buttonHistory"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:text="History"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRequestStatus"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="215dp"
+            android:layout_height="235dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/request" />
+
+        <TextView
+            android:id="@+id/notifBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

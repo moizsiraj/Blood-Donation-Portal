@@ -65,15 +65,15 @@ public class requestAdapter extends RecyclerView.Adapter<requestAdapter.RequestV
         public Button reject;
 
 
-        public RequestViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
+        public RequestViewHolder(@NonNull final View itemView, final OnItemClickListener listener) {
             super(itemView);
-            name = itemView.findViewById(R.id.acceptNameTxt);
-            bloodBank = itemView.findViewById(R.id.acceptBloodBankTxt);
-            branch = itemView.findViewById(R.id.acceptBranchTxt);
-            date = itemView.findViewById(R.id.acceptDateTxt);
-            time = itemView.findViewById(R.id.accceptTimeTxt);
-            accept = itemView.findViewById(R.id.acceptCall);
-            reject = itemView.findViewById(R.id.acceptDirections);
+            name = itemView.findViewById(R.id.acceptScrNameTxt);
+            bloodBank = itemView.findViewById(R.id.acceptScrBloodBankTxt);
+            branch = itemView.findViewById(R.id.acceptScrBranchTxt);
+            date = itemView.findViewById(R.id.acceptScrDateTxt);
+            time = itemView.findViewById(R.id.acceptScrTime);
+            accept = itemView.findViewById(R.id.acceptRequest);
+            reject = itemView.findViewById(R.id.rejectRequest);
 
             accept.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -93,7 +93,7 @@ public class requestAdapter extends RecyclerView.Adapter<requestAdapter.RequestV
                     if  (listener != null){
                         int position = getAdapterPosition();
                         if(position != RecyclerView.NO_POSITION){
-                            listener.onAcceptClick(position);
+                            listener.onRejectClick(position);
                         }
                     }
                 }

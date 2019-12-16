@@ -1,6 +1,6 @@
 package com.example.bloodbank;
 
-public class user {
+public class userDetails {
 
     String name;
     String phone;
@@ -8,14 +8,33 @@ public class user {
     String gender;
     String bloodGrp;
     String location;
+    String uid;
+    boolean donor;
 
-    public user(String name, String phone, String dob, String gender, String bloodGrp, String location) {
+    public userDetails() {
+    }
+
+    public userDetails(String uid, String name, String phone, String dob, String gender, String bloodGrp, String location, boolean donor) {
+        this.uid = uid;
         this.name = name;
         this.phone = phone;
         this.dob = dob;
         this.gender = gender;
         this.bloodGrp = bloodGrp;
         this.location = location;
+        this.donor = donor;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public boolean isDonor() {
+        return donor;
     }
 
     public void setName(String name) {
@@ -42,6 +61,7 @@ public class user {
         this.location = location;
     }
 
+
     public String getName() {
         return name;
     }
@@ -64,5 +84,18 @@ public class user {
 
     public String getLocation() {
         return location;
+    }
+
+    @Override
+    public String toString() {
+        return "userDetails{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", dob='" + dob + '\'' +
+                ", gender='" + gender + '\'' +
+                ", bloodGrp='" + bloodGrp + '\'' +
+                ", location='" + location + '\'' +
+                ", donor=" + donor +
+                '}';
     }
 }

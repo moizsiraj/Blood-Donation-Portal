@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".acceptScreen">
+
+
+            <TextView
+                android:id="@+id/acceptNoTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/phone_number"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/acceptName" />
+
+            <TextView
+                android:id="@+id/acceptScrNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/acceptNoTxt"
+                app:layout_constraintTop_toBottomOf="@+id/acceptScrNameTxt" />
+
+            <ImageView
+                android:id="@+id/accept"
+                android:layout_width="215dp"
+                android:layout_height="235dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/acceptance" />
+
+            <TextView
+                android:id="@+id/acceptScrDateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/acceptDate"
+                app:layout_constraintTop_toBottomOf="@+id/acceptScrBranchTxt" />
+
+            <TextView
+                android:id="@+id/acceptScrTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/acceptTime"
+                app:layout_constraintTop_toBottomOf="@+id/acceptScrDateTxt" />
+
+            <TextView
+                android:id="@+id/acceptDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="Date"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/acceptBranch" />
+
+            <TextView
+                android:id="@+id/acceptTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="Time"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/acceptDate" />
+
+            <Button
+                android:id="@+id/acceptRequest"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/holo_green_light"
+                android:text="Call"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/acceptScrTime"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/rejectRequest"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorAccent"
+                android:text="Directions"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/acceptRequest"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/acceptTime"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/acceptName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="30dp"
+                android:text="Name"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accept" />
+
+            <TextView
+                android:id="@+id/acceptBloodBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="Blood Bank"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/acceptNoTxt" />
+
+            <TextView
+                android:id="@+id/acceptScrBranchTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/acceptBranch"
+                app:layout_constraintTop_toBottomOf="@+id/acceptScrBloodBankTxt" />
+
+            <TextView
+                android:id="@+id/acceptScrBloodBankTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/acceptBloodBank"
+                app:layout_constraintTop_toBottomOf="@+id/acceptScrNo" />
+
+            <TextView
+                android:id="@+id/acceptBranch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
+                android:text="Branch"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/acceptBloodBank" />
+
+            <TextView
+                android:id="@+id/acceptScrNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/colorText"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/acceptName"
+                app:layout_constraintTop_toBottomOf="@+id/accept" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

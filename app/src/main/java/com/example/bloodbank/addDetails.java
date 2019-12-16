@@ -5,22 +5,26 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Objects;
 
 public class addDetails extends AppCompatActivity {
 
@@ -29,21 +33,24 @@ public class addDetails extends AppCompatActivity {
     Calendar dob = Calendar.getInstance();
     private FirebaseDatabase database;
     private DatabaseReference userDetails;
-    private ChildEventListener mChildEventListener;
     private EditText name;
     private EditText phone;
     private EditText DoB;
     private Spinner gender;
     private Spinner bloodGrp;
     private Spinner location;
+    private CheckBox donor;
+    private String uid;
     private String Sname;
     private String Sphone;
     private String SDoB;
     private String Sgender;
     private String SbloodGrp;
     private String Slocation;
+    private boolean Sdonor;
     private Button save;
-    private user u;
+    private com.example.bloodbank.userDetails user;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +60,10 @@ public class addDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_details);
         setDate();
+        firebaseAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
-        userDetails = database.getReference().child("users");
+        userDetails = database.getReference().child("userDetails/"+ Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid());
+
 
         save = (Button) findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
@@ -62,19 +71,17 @@ public class addDetails extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                getData();
-                u = new user(Sname, Sphone, SDoB, Sgender, SbloodGrp, Slocation);
-                userDetails.push().setValue(u);
-                Context context = addDetails.this;
-                Class destinationActivity = userPage.class;
-                Intent startIntent = new Intent(context, destinationActivity);
-                startActivity(startIntent);
-                finish();
-            }
+                    getData();
+                    user = new userDetails(uid,Sname,Sphone,SDoB,Sgender,SbloodGrp,Slocation,Sdonor);
+                    userDetails.setValue(user);
+                    Context context = addDetails.this;
+                    Class destinationActivity = userPage.class;
+                    Intent startIntent = new Intent(context, destinationActivity);
+                    startActivity(startIntent);
+                    finish();
+                }
         });
     }
-
-
 
     private void setDate(){
         signupdate = (EditText) findViewById(R.id.signupdate);
@@ -119,8 +126,11 @@ public class addDetails extends AppCompatActivity {
         gender = findViewById(R.id.signupgender);
         Sgender = gender.getSelectedItem().toString();
         bloodGrp = findViewById(R.id.signupbloodgrp);
-        SbloodGrp = bloodGrp.getSelectedItem().toString();;
+        SbloodGrp = bloodGrp.getSelectedItem().toString();
         location = findViewById(R.id.signuplocation);
-        Slocation = location.getSelectedItem().toString();;
+        Slocation = location.getSelectedItem().toString();
+        donor = findViewById(R.id.checkDonor);
+        Sdonor = donor.isChecked();
+        uid = firebaseAuth.getCurrentUser().getUid();
     }
 }
